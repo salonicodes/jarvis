@@ -40,9 +40,9 @@ from sklearn.metrics.pairwise import cosine_similarity
 import warnings
 warnings.filterwarnings('ignore')
 from nltk.stem import WordNetLemmatizer
-#nltk.download('popular', quiet=True)
-#nltk.download('punkt')
-#nltk.download('wordnet')
+# nltk.download('popular', quiet=True)
+nltk.download('punkt')
+nltk.download('wordnet')
 
 from fake_useragent import UserAgent
 
@@ -214,4 +214,4 @@ def finalAnswer(query):
 
 
 if __name__ == "__main__":
-  app.run(debug=True)
+  app.run(host="localhost", port=4000, debug=True)
