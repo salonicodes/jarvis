@@ -1,0 +1,256 @@
+/*By Saloni Tripathi*/
+.assistant {
+    width: 30vmin;
+    height: 30vmin;
+    margin: auto;
+    position: absolute;
+    top: 35%;
+      left: 40%;
+  }
+  
+  .dot {
+    border-radius: 10px;
+    position: absolute;
+    -webkit-animation: hover 3s ease-in-out infinite;
+            animation: hover 3s ease-in-out infinite;
+  }
+  .dot-gold {
+    width: 50%;
+    height: 50%;
+    top: 0;
+    left: 0;
+  }
+  .dot-red {
+    width: 25%;
+    height: 25%;
+    top: 37.5%;
+    left: 50%;
+    -webkit-animation-delay: 0.3s;
+            animation-delay: 0.3s;
+  }
+  .dot-yellow {
+    width: 30%;
+    height: 30%;
+    bottom: 0;
+    left: 40%;
+    -webkit-animation-delay: 0.6s;
+            animation-delay: 0.6s;
+  }
+  .dot-blue {
+    width: 15%;
+    height: 15%;
+    top: 25%;
+    right: 7.5%;
+    -webkit-animation-delay: 1.2s;
+            animation-delay: 1.2s;
+  }
+  
+  :root {
+    font-size: 16px;
+    color: white;
+  }
+  
+  @-webkit-keyframes hover {
+    50% {
+      transform: translateY(-20%);
+    }
+  }
+  
+  @keyframes hover {
+    50% {
+      transform: translateY(-20%);
+    }
+  }
+  body {
+    min-height: 100vh;
+  }
+  
+  .gold{
+    background: #B97D10;
+  }
+  .red{
+    background: #AA0505;
+  }
+  .yellow{
+    background: #FBCA03;
+  }
+  .blue{
+    background: #67c7eb;
+  }
+  
+  .one{
+      margin-left:5px;
+      width:10px;
+      height:30px;
+      border-radius:10px;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      display:inline-block;
+      animation: topBar 1.2s 0s infinite ease;
+  }
+  .two{
+      margin-left:20px;
+      width:10px;
+      height:50px;
+      border-radius:10px;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      display:inline-block;
+      animation: topBar 1.3s 0s infinite ease;
+  }
+  .three{
+      margin-left:35px;
+      width:10px;
+      height:50px;
+      border-radius:10px;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      display:inline-block;
+      animation: topBar 1.2s 0s infinite ease;
+  }
+  .four{
+      margin-left:50px;
+      width:10px;
+      height:30px;
+      border-radius:10px;
+      position: absolute;
+      top: 50%;
+      
+      transform: translateY(-50%);
+      display:inline-block;
+      animation: topBar 1s 0s infinite ease;
+  }
+  @-webkit-keyframes topBar {
+      0%   {
+          height:50px;
+      }
+      50%  {
+          
+          height:30px;
+      }
+      100% {
+          height:50px;
+      }
+  }
+  
+  
+  
+  
+  
+  
+  body{
+      /*light ocean */
+      background-color: #eee;
+      font-family: 'Nunito', sans-serif;
+      text-align: center;
+  }
+  
+  .icon,.speaking,.listening{
+      position: absolute;
+      left: 50%;
+      width: 0;
+      top: 50%;
+      text-align: center;
+      
+  }
+  
+  .bar{
+      position: absolute;
+      transform: translate(-50%,-50%);
+      /*align-items: center;*/
+      top : -10px;
+      width: 20px;
+      height: 20px;
+      margin: 5px 0;
+      border-radius: 10px;
+      transition: 0.3s;
+      animation: dope 1.5s ease-in-out 0s infinite;
+  }
+  
+  .bar:nth-child(1){
+      animation-delay: 0s;
+  }
+  
+  .bar:nth-child(2){
+      animation-delay: 0.15s;
+  }
+  .bar:nth-child(3){
+      animation-delay: 0.3s;
+  }
+  .bar:nth-child(4){
+      animation-delay: 0.45s;
+  }
+  
+  
+  @keyframes dope {
+      0%   {
+          height: 20px;
+      }
+      50%  {
+          height:60px;
+      }
+      100% {
+          height: 20px;
+      }
+  }
+  
+  
+  /*text effect*/
+  @keyframes reveal {
+    from {
+      width: 0;
+    }
+  }
+  @keyframes blink {
+    0% {
+      background-color: #60B99A;
+    }
+    50% {
+      background-color: transparent;
+    }
+    100% {
+      background-color: #60B99A;
+    }
+  }
+  html {
+    box-sizing: border-box;
+    font-size: 62.5%;
+  }
+  html *,
+  html *:before,
+  html *:after {
+    box-sizing: inherit;
+  }
+  
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+    background-color: #F4EAD5;
+  }
+  
+  .text {
+    display: inline-block;
+    position: relative;
+    width: 600ch;
+    word-wrap: break-word;
+    overflow: hidden;
+    color: #60B99A;
+    font-family: "Inconsolata", monospace;
+    font-size: 2.4rem;
+    animation: reveal 4s steps(55, end);
+    top: 20%;
+    height:auto;
+  }
+  .text::after {
+    position: absolute;
+    content: "";
+    width: 2px;
+    height: 100%;
+    background-color: #60B99A;
+    animation: blink 0.6s infinite;
+  }

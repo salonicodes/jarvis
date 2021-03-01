@@ -1,0 +1,55 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/template.css') }}">
+        <meta name="csrf-token" content="{{ csrf_token() }}">
+    </head> 
+
+<body>
+    <!-- By Saloni Tripathi -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="{{ url_for('static', filename='scripts/script.js') }}"></script>
+      <script type="text/javascript">
+        document.querySelector('button').click();
+    var msg = new SpeechSynthesisUtterance('Test');
+      </script>
+    <div class="assistant" onclick="answering()">
+      <div class="dot dot-gold gold"></div>
+      <div class="dot dot-red red"></div>
+      <div class="dot dot-yellow yellow"></div>
+      <div class="dot dot-blue blue"></div>
+    </div>
+      
+      
+      
+
+    <div class="text texts">
+        Hi! My name is Jarvis, how may I help you today?
+    </div> 
+    
+      
+        <div class="listening" style="display:none;">
+            <div class="one gold"></div>
+            <div class="two red"></div>
+            <div class="three yellow"></div>
+            <div class="four blue"></div>
+        </div>
+    
+      <div class="icon" style="display:none;">
+            <div style="margin-left: -60px;" class="bar gold"></div>
+            <div  style="margin-left: -20px;" class="bar red"></div>
+            <div  style="margin-left: 20px;" class="bar yellow"></div>
+            <div  style="margin-left: 60px;" class="bar blue"></div>
+        </div>
+    
+    
+    <div class="speaking" style="display:none;">
+            <div class="one gold"></div>
+            <div class="two red"></div>
+            <div class="three yellow"></div>
+      <div class="four blue"></div>
+        </div>
+      
+      
+      
+    </body>
+    </html>
