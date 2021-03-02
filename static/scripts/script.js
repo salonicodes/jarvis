@@ -50,7 +50,6 @@ async function forSpeaking(whatToSpeak) {
 
 async function forLoading() {
   show("icon");
-  speak("Just a moment");
   return;
 }
 
@@ -65,7 +64,7 @@ function forOrigin() {
   speak("Hey");
 }
 
-async function speak(text) {
+function speak(text) {
   if ("speechSynthesis" in window) {
     show("speaking")
     // Speech Synthesis supported
@@ -97,7 +96,7 @@ function listen() {
   var texts = document.querySelector(".texts");
   texts.innerHTML = "";
 
-  recognition.addEventListener("result", (e) => {
+  recognition.addEventListener("result", async (e) => {
     const text = Array.from(e.results)
       .map((result) => result[0])
       .map((result) => result.transcript)
@@ -106,7 +105,11 @@ function listen() {
       console.log("Texter = ", text)
     texts.innerText = text;
     if (e.results[0].isFinal) {
+        console.log("Final text = ", text)
       texts.innerText = text;
+      var answer = await getAns(text)
+        speak(answer)
+        show('assistant')
     }
     return texts.innerText;
   });
@@ -127,10 +130,7 @@ function listen() {
     var transcript = event.results[0][0].transcript;
     console.log("Transcript = ", transcript)
     forLoading()
-    var answer = await getAns(transcript)
-    speak(answer)
     console.log("Printed after speaking!")
-    show('assistant')
   };
 
   // start recognition
